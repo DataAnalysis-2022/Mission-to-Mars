@@ -104,8 +104,10 @@ def mars_facts():
     df.columns=['Description', 'Mars', 'Earth']
     df.set_index('Description', inplace=True)
 
+    mystyle = 'table table-striped text-center'
+
     # Convert dataframe into HTML format, add bootstrap
-    return df.to_html()
+    return df.to_html(classes= mystyle)
 
 
 def hemisphere_data(browser):
