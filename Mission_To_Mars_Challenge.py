@@ -80,13 +80,13 @@ for item in items_img:
 
     page = requests.get(url + rel_url)
 
-    time.sleep(2)
+    time.sleep(1)
     result_soup = soup(page.content, 'html.parser')
 
     #print(result_soup)
 
     img_title = result_soup.find('h2', class_='title').get_text()
-    img_url   = result_soup.find('div', class_='description').find('a', href=True)['href']
+    img_url   = result_soup.find_all('li')[0].find('a')['href']
 
     item_dict = {'img_url': url+img_url, 'title': img_title}
     hemisphere_image_urls.append(item_dict)

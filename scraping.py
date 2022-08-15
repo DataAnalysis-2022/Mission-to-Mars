@@ -21,9 +21,10 @@ def scrape_all():
         "news_paragraph":   news_paragraph,
         "featured_image":   featured_image(browser),
         "facts":            mars_facts(),
-        "hemisphere":       hemisphere(browser)
+        "hemispheres":       hemisphere_data(browser),
         "last_modified":    dt.datetime.now()
     }
+
 
     # Stop webdriver and return data
     browser.quit()
@@ -107,7 +108,7 @@ def mars_facts():
     return df.to_html()
 
 
-def hemisphere(browser):
+def hemisphere_data(browser):
     # 1. Use browser to visit the URL 
     url = 'https://marshemispheres.com/'
 
@@ -129,11 +130,11 @@ def hemisphere(browser):
 
             page = requests.get(url + rel_url)
 
-            time.sleep(2)
+            time.sleep(1)
             result_soup = soup(page.content, 'html.parser')
 
             img_title = result_soup.find('h2', class_='title').get_text()
-            img_url   = result_soup.find('div', class_='description').find('a', href=True)['href']
+            img_url   = result_soup.find_all('li')[0].find('a', href=True)['href']
 
             item_dict = {'img_url': url+img_url, 'title': img_title}
             hemisphere_image_urls.append(item_dict)
