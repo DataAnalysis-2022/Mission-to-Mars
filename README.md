@@ -14,13 +14,13 @@ To make the webpage looks more interesting, we will use BeautifulSoup and Splint
 
    We scrape the image URL and title and put it into a dictionary, as shown below:
 
-   ![url-title](Resources\deliver-1.png)
+   ![url-title](Resources/deliver-1.png)
 
 2. #### Update the Web App with Mars Hemisphere Images and Titles
 
 ​		With the full resolution images and titles, the updated webpage looks like the following image:
 
-​									![webpage](Resources\deliver-2.png) 
+​									![webpage](Resources/deliver-2.png) 
 
 
 
@@ -30,14 +30,15 @@ To make the webpage looks more interesting, we will use BeautifulSoup and Splint
 
    - ##### 	change button to active
 
-     ​	![button](Resources\deliver-3a.png)
+     ​	![button](Resources/deliver-3a.png)
 
      
 
    - ##### change table to striped table
 
-     ![table](Resources\deliver-3b.png)
+     ![table](Resources/deliver-3b.png)
 
    - #####  change the image to thumbnails
 
-​							![](Resources\deliver-3.png)
+​							![](Resources/deliver-3.png)
+
